@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee List</h1>
+        <a href="/employee/add" class="btn">Add New Employee</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% employees.forEach(function(employee) { %>
+                    <tr>
+                        <td><%= employee.Employee_id %></td>
+                        <td><%= employee.Name %></td>
+                        <td><%= employee.Age %></td>
+                        <td><%= employee.Position %></td>
+                        <td>
+                            <a href="/employee/<%= employee.Employee_id %>" class="edit-btn">Edit</a>
+                            <form action="/employee/delete/<%= employee.Employee_id %>" method="POST" class="inline-form">
+                                <button type="submit" class="delete-btn" 
+                                onclick="return confirm('Are you sure you want to delete this note?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
