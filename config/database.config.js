@@ -4,7 +4,7 @@ const dbConfig = {
     user: process.env.DB_USER, // Sử dụng biến môi trường
     password: process.env.DB_PASSWORD, // Sử dụng biến môi trường
     database: process.env.DB_NAME, // Sử dụng biến môi trường
-    port: process.env.DB_PORT || 3306 // Sử dụng biến môi trường hoặc mặc định là 3306
+    port: process.env.DB_PORT ||  5432// Sử dụng biến môi trường hoặc mặc định là 3306
 };
 
 async function init(){
